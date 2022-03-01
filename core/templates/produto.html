@@ -1,0 +1,32 @@
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+    {% bootstrap_css %}
+    {% bootstrap_messages %}
+    {% bootstrap_javascript %} 
+</head>
+<body>
+    <div class="conteiner">
+        <h1>Produto</h1>
+        
+        <form class="form" autocomplete="off" action="{% url 'produto' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            
+            {% buttons %}
+                <button class="btn btn-primary" type="submit">Enviar dados</button>
+            {% endbuttons %}
+
+        </form>
+
+    </div>
+
+
+</body>
+</html>
